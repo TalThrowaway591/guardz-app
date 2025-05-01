@@ -2,6 +2,7 @@ import type { Route } from "./+types/submit";
 import type { SubmitHandler } from "react-hook-form";
 
 import { useForm } from "react-hook-form"
+import { PageContainer } from "~/components/PageContainer/PageContainer";
 import { Title } from "~/components/Title/Title";
 
 export function meta({ }: Route.MetaArgs) {
@@ -37,7 +38,7 @@ export default function App() {
 
     /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
     return (
-        <div className="page">
+        <PageContainer>
             <Title text="Submit User Information" />
             <form className="form" onSubmit={handleSubmit(onSubmit)}>
                 {/* register your input into the hook by invoking the "register" function */}
@@ -50,6 +51,6 @@ export default function App() {
 
                 <input className="button" type="submit" />
             </form>
-        </div>
+        </PageContainer>
     )
 }
