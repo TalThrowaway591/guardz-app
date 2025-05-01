@@ -1,18 +1,37 @@
 @import "tailwindcss";
 
+body {
+    background-color: #222831;
+    color: #DFD0B8;
+}
+
 .page {
     display: flex;
     padding-top: 50px;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .form {
     display: flex;
     flex-direction: column;
     width: 300px;
+    justify-content: center;
+    align-items: center;
 }
 
 
 .form-field {
-    border: 1px solid black;
+    border: 1px solid #DFD0B8;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+.button {
+    background-color: #393E46;
+    width: fit-content;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
 }

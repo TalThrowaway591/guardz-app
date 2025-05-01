@@ -2,6 +2,7 @@ import type { Route } from "./+types/submit";
 import type { SubmitHandler } from "react-hook-form";
 
 import { useForm } from "react-hook-form"
+import { Title } from "~/components/Title/Title";
 
 export function meta({ }: Route.MetaArgs) {
     return [
@@ -11,8 +12,8 @@ export function meta({ }: Route.MetaArgs) {
 }
 
 type Inputs = {
-    example: string
-    exampleRequired: string
+    title: string
+    body: string
 }
 
 export default function App() {
@@ -23,7 +24,12 @@ export default function App() {
         formState: { errors },
     } = useForm<Inputs>()
 
-    const onSubmit: SubmitHandler<Inputs> = (data) => {
+    const onSubmit: SubmitHandler<Inputs> = async (data) => {
+        await fetch("http://localhost:3000/user-data", {
+            method: "POST",
+            body: JSON.stringify(data)
+        })
+
         console.log(data)
     }
 
@@ -32,16 +38,17 @@ export default function App() {
     /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
     return (
         <div className="page">
+            <Title text="Submit User Information" />
             <form className="form" onSubmit={handleSubmit(onSubmit)}>
                 {/* register your input into the hook by invoking the "register" function */}
-                <input className="form-field" placeholder="title" {...register("example")} />
+                <input className="form-field" placeholder="title" {...register("title")} />
 
                 {/* include validation with required or other standard HTML validation rules */}
-                <input className="form-field" placeholder="body" {...register("exampleRequired", { required: true })} />
+                <input className="form-field" placeholder="body" {...register("body", { required: true })} />
                 {/* errors will return when field validation fails  */}
-                {errors.exampleRequired && <span>This field is required</span>}
+                {errors.title && <span>This field is required</span>}
 
-                <input type="submit" />
+                <input className="button" type="submit" />
             </form>
         </div>
     )
