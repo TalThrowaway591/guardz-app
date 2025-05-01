@@ -29,18 +29,20 @@ export default function App() {
 
     // console.log(watch("example")) // watch input value by passing the name of it
 
+    /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
     return (
-        /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
-        <form onSubmit={handleSubmit(onSubmit)}>
-            {/* register your input into the hook by invoking the "register" function */}
-            <input className="form-field" defaultValue="test" {...register("example")} />
+        <div className="page">
+            <form className="form" onSubmit={handleSubmit(onSubmit)}>
+                {/* register your input into the hook by invoking the "register" function */}
+                <input className="form-field" placeholder="title" {...register("example")} />
 
-            {/* include validation with required or other standard HTML validation rules */}
-            <input className="form-field" {...register("exampleRequired", { required: true })} />
-            {/* errors will return when field validation fails  */}
-            {errors.exampleRequired && <span>This field is required</span>}
+                {/* include validation with required or other standard HTML validation rules */}
+                <input className="form-field" placeholder="body" {...register("exampleRequired", { required: true })} />
+                {/* errors will return when field validation fails  */}
+                {errors.exampleRequired && <span>This field is required</span>}
 
-            <input type="submit" />
-        </form>
+                <input type="submit" />
+            </form>
+        </div>
     )
 }

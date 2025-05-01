@@ -1,5 +1,18 @@
 @import "tailwindcss";
 
+.page {
+    display: flex;
+    padding-top: 50px;
+    justify-content: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+
 .form-field {
     border: 1px solid black;
 }
