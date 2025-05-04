@@ -2,8 +2,12 @@ import type { Route } from "./+types/submit";
 import type { SubmitHandler } from "react-hook-form";
 
 import { useForm } from "react-hook-form"
-import { PageContainer } from "~/components/PageContainer/PageContainer";
 import { Title } from "~/components/Title/Title";
+import { apiConfig } from "config";
+
+const { uri, routes } = apiConfig;
+
+const apiSubmitPath = `${uri}${routes.submitEntry}`;
 
 export function meta({ }: Route.MetaArgs) {
     return [
@@ -26,9 +30,12 @@ export default function App() {
     } = useForm<Inputs>()
 
     const onSubmit: SubmitHandler<Inputs> = async (data) => {
-        await fetch("http://localhost:3000/user-data", {
+        await fetch(apiSubmitPath, {
             method: "POST",
-            body: JSON.stringify(data)
+            body: JSON.stringify(data),
+            headers: {
+                "Content-Type": "application/json"
+            }
         })
 
         console.log(data)
@@ -38,7 +45,7 @@ export default function App() {
 
     /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
     return (
-        <PageContainer>
+        <>
             <Title text="Submit User Information" />
             <form className="form" onSubmit={handleSubmit(onSubmit)}>
                 {/* register your input into the hook by invoking the "register" function */}
@@ -51,6 +58,6 @@ export default function App() {
 
                 <input className="button" type="submit" />
             </form>
-        </PageContainer>
+        </>
     )
 }

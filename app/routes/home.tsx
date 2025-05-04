@@ -3,7 +3,6 @@ import type { SubmitHandler } from "react-hook-form";
 import { Title } from "~/components/Title/Title";
 
 import { useForm } from "react-hook-form"
-import { PageContainer } from "~/components/PageContainer/PageContainer";
 
 export function meta({ }: Route.MetaArgs) {
     return [
@@ -19,8 +18,6 @@ type Inputs = {
 
 export default function App() {
     return (
-        <PageContainer>
-            <Title text="Gaurdz Web Application" />
-        </PageContainer>
+        <Title text="Gaurdz Web Application" />
     )
 }

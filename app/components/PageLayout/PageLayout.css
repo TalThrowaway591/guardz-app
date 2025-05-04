@@ -1,0 +1,49 @@
+.layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar {
+    background-color: #393E46;
+    width: 100vw;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 10px;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar-title {
+    font-size: 16px;
+}
+
+.navbar-buttons-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar-author {
+    font-size: 10px
+}
+
+.navbar-button {
+    margin-left: 15px;
+    cursor: pointer;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.navbar-button:hover {
+    /* color: #DFD0B8 */
+    color: #948979;
+}
