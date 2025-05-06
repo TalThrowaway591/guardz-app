@@ -2,7 +2,7 @@
     background-color: #393E46;
     padding: 10px;
     border-radius: 5px;
-    min-width: 350px;
+    width: 100%;
     margin-bottom: 15px;
 }
 
@@ -14,10 +14,16 @@
 
 .data-entity-title {
     font-size: 20px;
+    margin-bottom: 5px;
 }
 
 .data-entity-body {
     font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.data-entity-footer {
+    font-size: 9px;
 }
 
 .data-entity-remove-button {

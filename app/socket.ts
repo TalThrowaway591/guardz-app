@@ -1,9 +1,8 @@
 import { io } from 'socket.io-client';
-
+import { apiConfig } from '../api-config'
 // "undefined" means the URL will be computed from the `window.location` object
-const URL = 'http://localhost:80';
 
-export const socket = io(URL, {
+export const socket = io(apiConfig.uri, {
     // withCredentials: true
 });
 

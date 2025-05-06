@@ -44,6 +44,13 @@
 }
 
 .navbar-button:hover {
-    /* color: #DFD0B8 */
     color: #948979;
+}
+
+.route-container {
+    max-width: 1000px;
+    min-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

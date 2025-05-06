@@ -1,4 +1,4 @@
-# Guarz React Application
+# Guardz React Application
 
 Demo Application By Tal Arbetov
 
@@ -24,3 +24,4 @@ first thought is by IP, but I can't send the IP address from the client since a 
 - style better
 - add functionallity to remove entries
 - work on inter-environment logic better (dev vs prod env variable handling, logic changes between envs)
+- rm config folder(?)

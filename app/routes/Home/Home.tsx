@@ -1,8 +1,5 @@
-import type { Route } from "./+types/submit";
-import type { SubmitHandler } from "react-hook-form";
+import type { Route } from "../../routes/Home/+types/Home";
 import { Title } from "~/components/Title/Title";
-
-import { useForm } from "react-hook-form"
 
 export function meta({ }: Route.MetaArgs) {
     return [
@@ -11,13 +8,8 @@ export function meta({ }: Route.MetaArgs) {
     ];
 }
 
-type Inputs = {
-    title: string
-    body: string
-}
-
 export default function App() {
     return (
-        <Title text="Gaurdz Web Application" />
+        <Title text="Guardz Web Application" />
     )
 }

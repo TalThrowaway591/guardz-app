@@ -6,7 +6,6 @@ import {
     Scripts,
     ScrollRestoration,
 } from "react-router";
-import { useState, useEffect } from "react";
 import type { Route } from "./+types/root";
 import "./app.css";
 import { PageLayout } from "./components/PageLayout/PageLayout";

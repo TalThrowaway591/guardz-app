@@ -1,8 +1,8 @@
 import { type RouteConfig, index, route, layout } from "@react-router/dev/routes";
 
 export default [
-    index("routes/home.tsx"),
-    route("submit", "routes/submit.tsx"),
-    route("data", "routes/data.tsx")
+    index("routes/Home/Home.tsx"),
+    route("submit-entry", "routes/SubmitEntry/SubmitEntry.tsx"),
+    route("view-entries", "routes/ViewEntries/ViewEntries.tsx")
 
 ] satisfies RouteConfig;

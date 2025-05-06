@@ -12,11 +12,13 @@ const PageLayout = (props: IProps) => {
                 <div className="navbar-author">By Tal Arbetov</div>
             </div>
             <div className="navbar-buttons-container">
-                <Link to="/submit"><div className="navbar-button">Create</div></Link>
-                <Link to="/data"><div className="navbar-button">View</div></Link>
+                <Link to="/submit-entry"><div className="navbar-button">Create</div></Link>
+                <Link to="/view-entries"><div className="navbar-button">View</div></Link>
             </div>
         </div>
-        <Outlet />
+        <div className="route-container">
+            <Outlet />
+        </div>
     </div>
 }
 
